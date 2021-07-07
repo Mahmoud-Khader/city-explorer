@@ -95,12 +95,8 @@ export class App extends Component {
           <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_lOCATIONIQ_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=13`} alt='' />
         }
 
-        {this.state.localWeatherData.map(weatherData => {
-          return <Weather description={weatherData.description} date={weatherData.date} />
-
-          
-        })}
-        <Movies moviesData={this.state.moviesData} key='idx'/>
+        <Weather localWeatherData={this.state.localWeatherData}/>
+        <Movies moviesData={this.state.moviesData} />
 
       </div>
 
