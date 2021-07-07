@@ -46,8 +46,12 @@ export class App extends Component {
       let localUrl = `${process.env.REACT_APP_EXPRESS_SERVER}/weather?lat=${lat}&lon=${lon}.91&searchQuery=${this.state.mapSearch}`;
       let localReq = await axios.get(localUrl);
 
-      let movielocalUrl = `${process.env.REACT_APP_EXPRESS_SERVER}/movies?city=${this.state.mapSearch}`;
+      // let movielocalUrl = `http://localhost:3001/movies?searchQuery=amman`;
+      // let movielocalUrl = `${process.env.REACT_APP_EXPRESS_SERVER}/movies?city=${this.state.mapSearch}`;
+      let movielocalUrl = `${process.env.REACT_APP_EXPRESS_SERVER}/movies?searchQuery=${this.state.mapSearch}`;
       let movielocalReq = await axios.get(movielocalUrl);
+      
+      console.log(movielocalUrl+'hello')
 
 
       this.setState({
@@ -60,6 +64,7 @@ export class App extends Component {
         lon: resData.data[0].lon
 
       })
+      console.log(this.state.moviesData+'  the moviesData')
     }
     catch (err) {
       this.setState({
