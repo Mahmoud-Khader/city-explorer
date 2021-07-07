@@ -7,11 +7,11 @@ class Movie extends Component {
       <div>
         <Row xs={2} md={3} >
           {
-            this.props.moviesData.map(value => {
+            this.props.moviesData.map((value,index) => {
               console.log(this.props.moviesData[0]+'  Value console')
               return (
 
-                <Col>
+                <Col key={index}>
 
                   <Card>
 
